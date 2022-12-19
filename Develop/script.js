@@ -1,10 +1,9 @@
 // Assignment code here
 const chars = {
-    alpha: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    numbers: "0123456789"
+    alpha: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
+    numbers: "0123456789",
     symbols: " !\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
 }
-
 
 
 
