@@ -1,7 +1,10 @@
 // Assignment code here
-const alpha = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-const numbers = "0123456789"
-const symbols = " !\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
+const chars = {
+    alpha: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    numbers: "0123456789"
+    symbols: " !\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
+}
+
 
 
 
