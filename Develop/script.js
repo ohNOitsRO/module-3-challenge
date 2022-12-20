@@ -16,22 +16,22 @@ const passwordLength = function () {
 
       window.confirm("Excellent! Would you like Upper Case characters in your password?");       
         if (true) {          
-          emptyPassword.push(Math.floor(Math.random * chars.alphaUpper[length]));
+          emptyPassword.push(Math.floor(Math.random * chars.alphaUpper.length));
         }
       
       window.confirm("Super! Would you like Lower Case characters in your password?");
         if (true) {
-          emptyPassword.push(Math.floor(Math.random * chars.alphaLower[length]));
+          emptyPassword.push(Math.floor(Math.random * chars.alphaLower.length));
         }
 
       window.confirm("Awesome! Would you like Numbers in your password?");
         if (true) {
-          emptyPassword.push(Math.floor(Math.random * chars.numbers[length]));
+          emptyPassword.push(Math.floor(Math.random * chars.numbers.length));
         }
 
       window.confirm("Fantastic! Would you like Symbols in your password?");
         if (true) {
-          emptyPassword.push(Math.floor(Math.random * chars.alphaLower[length]));
+          emptyPassword.push(Math.floor(Math.random * chars.symbols.length));
         }
 
     }
