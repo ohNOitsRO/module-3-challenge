@@ -41,6 +41,7 @@ const passwordLength = function () {
   }
 }
 
+passwordLength();
 
 
 // Get references to the #generate element
