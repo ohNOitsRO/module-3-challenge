@@ -3,7 +3,7 @@ const chars = {
     alphaUpper: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
     alphaLower: "abcdefghijklmnopqrstuvwxyz",
     numbers: "0123456789",
-    symbols: " !\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"
+    symbols: " !\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"   
 }
 
 const passwordLength = function () {
@@ -12,30 +12,38 @@ const passwordLength = function () {
   // tryAgain function
   function tryAgain() {
     // Get tryAgain boolean with prompt
-    const tryAgain = window.confirm("That's not a number btween 8 and 128!");
+    const tryAgain = window.confirm("That's not a number between 8 and 128!");
     // Checking their response on "Try again? question"
     if (tryAgain) {
       return passwordLength();
     }
+    else {
+      window.alert("Sad to see you go! Come back soon!")
+    }
   }
 
-  // Checking if you put a valid password length
+
   if (length > 8  && length < 128) {
-    // alerting window if so
-    window.alert("You are the one!");
-    // Otherwise you might be the one
-  } else if (name.toUpperCase() === "TRINITY") {
-    // asking for confirmation on Oneness status
+    
+   const ifUpper = window.prompt("Excellent! Would you like Upper Case characters in your password?");
+    
+  } else if (ifUpper === false) {
+    
     const isTheOne = window.confirm("Whoa, wait, do you think maybe you're the one?");
-    // Checking if response is confirm
+  
+  } else {
+
+
+  }
+
     if (isTheOne) {
-      // and alerting window if so
+      
       window.alert("Who needs Neo!!?\n\nYou are the one!!!");
-      // if they deny Oneness, ask to try agin
+   
     } else {
       tryAgain();
     }
-    // If they aren't Neo or Trinity, ask to try again
+ 
   } else {
     tryAgain();
   }
@@ -59,3 +67,4 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
