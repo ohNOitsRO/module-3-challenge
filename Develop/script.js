@@ -1,15 +1,12 @@
 // Assignment code here
 const chars = {
-    alphaUpper: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-    alphaLower: "abcdefghijklmnopqrstuvwxyz",
-    numbers: "0123456789",
-    symbols: " !\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"   
+  alphaUpper: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+  alphaLower: "abcdefghijklmnopqrstuvwxyz",
+  numbers: "0123456789",
+  symbols: " !\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~"   
 }
 
-/* const symbols = ["!", "\\", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~"];
-  const alphaLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-  const alphaUpper = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-  const numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]; */
+let allChars= []
 
 let emptyPassword = [];
 
@@ -19,25 +16,28 @@ const passwordLength = function () {
   
     if (length >= 8  && length <= 128) {
 
-      window.confirm("Excellent! Would you like Upper Case characters in your password?");       
-        if (true) {     
-          console.log(chars.alphaUpper[Math.floor(Math.random * chars.alphaUpper.length)]);
-          emptyPassword.push(chars.alphaUpper[Math.floor(Math.random * chars.alphaUpper.length)]);
+      alphaConfirm = window.confirm("Excellent! Would you like Upper Case characters in your password?");       
+        if (alphaConfirm) {              
+          emptyPassword.push(chars.alphaUpper[Math.floor(Math.random() * chars.alphaUpper.length)]);
+          allChars = allChars.concat(chars.alphaUpper);          
         }
       
-      window.confirm("Super! Would you like Lower Case characters in your password?");
-        if (true) {
-          emptyPassword.push(Math.floor(Math.random * chars.alphaLower.length));
+      lowerConfirm = window.confirm("Super! Would you like Lower Case characters in your password?");
+        if (lowerConfirm) {     
+          emptyPassword.push(chars.alphaLower[Math.floor(Math.random() * chars.alphaLower.length)]);
+          allChars = allChars.concat(chars.alphaLower);
         }
 
-      window.confirm("Awesome! Would you like Numbers in your password?");
-        if (true) {
-          emptyPassword.push(Math.floor(Math.random * chars.numbers.length));
+      numbersConfirm = window.confirm("Awesome! Would you like Numbers in your password?");
+        if (numbersConfirm) {
+          emptyPassword.push(chars.numbers[Math.floor(Math.random() * chars.numbers.length)]);
+          allChars = allChars.concat(chars.numbers);
         }
 
-      window.confirm("Fantastic! Would you like Symbols in your password?");
-        if (true) {
-          emptyPassword.push(Math.floor(Math.random * chars.symbols.length));
+      symbolsConfirm = window.confirm("Fantastic! Would you like Symbols in your password?");
+        if (symbolsConfirm) {
+          emptyPassword.push(chars.symbols[Math.floor(Math.random() * chars.symbols.length)]);
+          allChars = allChars.concat(chars.symbols);
         }
 
     }
@@ -51,10 +51,26 @@ const passwordLength = function () {
 
     }
 
+// for (i=0; i < length; i++) {
+      
+//   emptyPassword.push(allChars[Math.floor(Math.random() * allChars.length)]);
+
+// }
+
+
+for (let i = 0; i < allChars.length; i++) {
+  for (let j = 0; j < allChars[i].length; j++) {
+    emptyPassword.push(allChars[i][j]);
+  }
+}
+
+
 passwordLength();
 
-console.log(emptyPassword);
-    
+console.log(allChars.length);
+console.log(allChars);
+console.log(emptyPassword.toString());
+
 
 
 // // Get references to the #generate element
