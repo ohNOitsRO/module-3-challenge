@@ -8,7 +8,9 @@ let allChars= [];
 let ifConfirm = true;
 let emptyPassword = [];
 
-const passwordLength = function () {
+var generateBtn = document.querySelector("#generate");
+
+generateBtn.addEventListener("click",function () {
 
     const length = window.prompt("How long do you want your password to be?"); 
   
@@ -39,39 +41,17 @@ const passwordLength = function () {
     else {
 
         window.alert("This isn't a number between 8 and 128! Try Again!");
-        passwordLength();
-      
-      }
-
-  for (let i=0; i < length; i++) {
-      
-    emptyPassword.push(allChars[Math.floor(Math.random() * allChars.length)]);
+        
       
     }
 
-}
+    for (let i=0; i < length; i++) {
+      
+        emptyPassword.push(allChars[Math.floor(Math.random() * allChars.length)]);
+      
+    }
 
+    var passwordBox = document.querySelector("#password");
+    passwordBox.value = emptyPassword.join("");
 
-passwordLength();
-
-console.log(allChars.length);
-console.log(allChars);
-console.log(emptyPassword.toString());
-
-
-
-// // Get references to the #generate element
-// var generateBtn = document.querySelector("#generate");
-
-// // Write password to the #password input
-// function writePassword() {
-
-//   var password = generatePassword();
-//   var passwordText = document.querySelector("#password");
-
-//   passwordText.value = password;
-
-// }
-
-// // Add event listener to generate button
-// generateBtn.addEventListener("click", writePassword);
+})
